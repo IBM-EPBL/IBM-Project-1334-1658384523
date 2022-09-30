@@ -1,6 +1,6 @@
 # Jhanani J
 # Roll No : 19I324
 ## _Question 1 (registration.html):_ 
-Fetch deatils from Registration Page and display them in a table using HTML and create an External CSS 
-## _Question 2 Flask App (app.py):_ 
-Create a sample flask app to demonstrate HTTP methods (GET,PUT,POST,DELETE)
+Create Registration Page
+
+1-4 input boxes -name -qualification -age -email -submit button
