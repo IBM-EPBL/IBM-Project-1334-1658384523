@@ -1,0 +1,26 @@
+<a style="color: rgb(251, 25, 25); font-size: 20dp;" href="/">HOME</a>
+<a style="color: rgb(17, 35, 224); font-size: 20dp;"href="/uploader">Upload</a>
+<a style="color: rgb(17, 35, 224); font-size: 20dp;"href="/deletefile">Delete</a>
+<br><hr>
+<center><h1>IBM - Object Storage</h1></center>
+<hr>
+
+
+<!doctype html>
+<html>
+    <head>
+        <title>IBM Object Storage</title>
+        <link rel="stylesheet" href="https://jeeva-bucket1.s3.jp-tok.cloud-object-storage.appdomain.cloud/styles.css">
+    </head>
+      <body>
+      {% for row in files %}
+      <center>
+        <div style="border: 1px solid #EFEFEF;margin:10px;">
+            <h3>Image Name : {{row}} </h3>
+            <img src="https://jeeva-bucket1.s3.jp-tok.cloud-object-storage.appdomain.cloud/{{row}}" width="500px"></td>
+         </div>
+      </center>
+         
+      {% endfor %}
+   </body>
+</html>
