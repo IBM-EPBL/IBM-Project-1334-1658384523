@@ -10,4 +10,4 @@ Team Members:
 
 PSG COLLEGE OF TECHNOLOGY, COIMBATORE.
 
-# ( Link for our Inventory Management Project after all the deployments : http://169.51.207.234:30399/ )
+# ( Link for our Inventory Management Project : http://169.51.207.234:30399/ )
