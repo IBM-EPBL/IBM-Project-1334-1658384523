@@ -1,0 +1,37 @@
+  <nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color:rgb(13, 4, 17);">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: red;">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class=" glyphicon glyphicon-home nav-link" href="/" style="color: white;font-weight: bold;font-family:sans-serif;">HOME</a>
+        </li>
+        {% if session.logged_in %}
+        <li class="nav-item">
+            <a class="nav-link" href="/products" style="color: white;font-weight: bold;font-family:sans-serif;" >Products</a>
+        </li>
+        {% endif %}
+        {% if session.logged_in %}
+        <li class="nav-item">
+          <a class="nav-link" href="/locations" style="color: white;font-weight: bold;font-family:sans-serif;">Locations</a>
+        </li>
+        {% endif %}
+        {% if session.logged_in %}
+        <li class="nav-item">
+          <a class="nav-link" href="/product_movements" style="color: white;font-weight: bold;font-family:sans-serif;">Product Movements</a>
+        </li>
+        {% endif %}
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        {% if session.logged_in %}
+          <li class="nav-item"><a class="nav-link" href="/logout" style="color: white;font-weight: bold;font-family:sans-serif;">Logout</a></li>
+          <li class="nav-item"><a class="nav-link" href="/dashboard" style="color: white;font-weight: bold;font-family:sans-serif;">Dashboard</a></li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="/register" style="color: white;font-weight: bold;font-family:sans-serif;">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login" style="color: white;font-weight: bold;font-family:sans-serif;">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
