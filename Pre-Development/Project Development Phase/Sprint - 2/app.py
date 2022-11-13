@@ -498,47 +498,8 @@ def add_product_movements():
                 ibm_db.execute(stmt)
                 print("No")
 
-        sql = "SELECT * FROM PRODUCT_BALANCE"
-        stmt = ibm_db.prepare(conn,sql)
-        ibm_db.execute(stmt)
-        products = ibm_db.fetch_assoc(stmt)
-        prod_ = []
-        locs_ = []
-        qty_ = []
-        low_msg = "Dear User,\n"
-        flag = 0
-        while(products):
-            prod_.append(products['PRODUCT_ID'])
-            locs_.append(products['LOCATION_ID'])
-            qty_.append(products['QTY'])
-            products = ibm_db.fetch_assoc(stmt)
-
-        for i in range(0,len(prod_)):
-            if qty_[i] <= 30:
-                low_msg = low_msg + "Your Product - " + prod_[i] + " at the warehouse " + locs_[i] + " is very low!!! \n"
-                flag = 1
         
-        if flag==1:    
-            mail_from = '19i317@psgtech.ac.in'
-            mail_to = '19i323@psgtech.ac.in'
-
-            msg = MIMEMultipart()
-            msg['From'] = mail_from
-            msg['To'] = mail_to
-            msg['Subject'] = 'Low Product Alert!!!'
-            mail_body = low_msg + "Please keep Track of your product. "
-            msg.attach(MIMEText(mail_body))
-
-            try:
-                server = smtplib.SMTP_SSL('smtp.sendgrid.net', 465)
-                server.ehlo()
-                server.login('apikey', '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')
-                server.sendmail(mail_from, mail_to, msg.as_string())
-                server.close()
-                print("mail sent")
-            except:
-                print("issue")
-            
+        
         flash("Product Movement Added", "success")
 
 
