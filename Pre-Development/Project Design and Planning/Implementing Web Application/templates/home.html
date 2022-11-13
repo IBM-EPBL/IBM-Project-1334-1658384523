@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div style="background-image: url('/static/images/i.jpg');
+        background-size: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-left: 300px;
+        padding-right: 300px;
+        height: auto;">
+            <br>
+        <center style="color: black;
+        font-family: 'Roboto',sans-serif;
+        background-color: #cccccc;
+        opacity: 0.8">
+        <p><h2><span style="color: red;font-weight: bold;"><i>INVENTORY MANAGEMENT SYSTEM</i></span></h2>
+        </p>
+        </center>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+{% if session.logged_in == NULL %}
+    <div class="container mt-4">
+    <div class="jumbotron ">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 offset-md-1 img-thumbnail " >
+                    <img src="/static/images/log.png" style="height: auto; width: 100%;">
+                    <br>
+                    <caption>
+                        <center>
+                            <a href="/login" class="btn btn-success btn-lg">Login</a>
+                        </center>
+                        <br>
+                    </caption>
+                </div>
+                <div class="col-md-4 offset-md-2 img-thumbnail">
+                    <img src="/static/images/reg.png"  style="height: auto; width: 100%;">
+                    <br>
+                    <caption>
+                        <center>
+                            <a href="/register" class="btn btn-primary btn-lg">Register</a>
+                        </center><br>
+                    </caption>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+{% endif %}
+
+</div>
+{% endblock %} 

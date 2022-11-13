@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<center> <u><h2 style="color:rgb(14, 122, 172);">Welcome {{session.username}}</h2></u></center>
+<div class="container mt-4">
+     <h2>DASHBOARD</h2>
+     <hr>
+       {% for location in locations %}
+       <div>
+        <h3 class="mt-4" style="color:rgb(207, 37, 65) ;" >{{location}}</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Warehouse</th>
+                    <th>Qty</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for product in products %}
+                       {% if product[1] == location %}
+                   <tr>
+                    <td>{{product[0]}}</td>
+                    <td>{{product[1]}}</td>
+                    <td>{{product[2]}}</td>
+                   </tr>
+                       {% endif %}
+                   {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
