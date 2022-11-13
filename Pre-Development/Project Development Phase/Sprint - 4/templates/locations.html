@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-4">
+     <h1>LOCATIONS</h1>
+     <a class="btn btn-success" href="/add_location">Add Location</a>
+     <hr>
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Location ID</th>
+                 <th></th>
+                 <th></th>
+             </tr>
+         </thead>
+         <tbody>
+                 {% for location in locations %}
+                <tr>
+                 <td>{{location}}</td>
+                 <td><a href="edit_location/{{location}}" class="btn btn-primary pull-right">Edit</a></td>
+                 <td>
+                     <form action="{{url_for('delete_location', id=location)}}" method="POST">
+                        <input type="hidden" name="method" value="DELETE">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                     </form>
+                 </td>
+                </tr>
+                {% endfor %}
+         </tbody>
+     </table>
+     </div>
+
+{% endblock %}
