@@ -11,8 +11,8 @@ from email.mime.base import MIMEBase
 app = Flask(__name__)
 app.secret_key = 'a'
 
-# conn=ibm_db.connect("DATABASE=bludb;HOSTNAME=cfd8-47b7-4937-840d-d791d0218660.bs2io90l08kqb1od8lcg.databases.appdomain.cloud;PORT=31864;SECURITY=SSL;SSLServerCertificate=DigiCertGlobalRootCA.crt;UID=bsp63741;PWD=WFserEZz6UKSVeHR;",'','')
-conn = ibm_db.connect('','','')
+conn=ibm_db.connect("DATABASE=bludb;HOSTNAME=cfd8-47b7-4937-840d-d791d0218660.bs2io90l08kqb1od8lcg.databases.appdomain.cloud;PORT=31864;SECURITY=SSL;SSLServerCertificate=DigiCertGlobalRootCA.crt;UID=bsp63741;PWD=WFserEZz6UKSVeHR;",'','')
+
 
 print("Hello")
 
