@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-4">
+     <h1>PRODUCT MOVEMENTS</h1>
+     <a class="btn btn-success" href="/add_product_movements">Add Product Movements</a>
+     <hr>
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Movement ID</th>
+                 <th>Time</th>
+                 <th>From Location</th>
+                 <th>To Location</th>
+                 <th>Product ID</th>
+                 <th>Quantity</th>
+             </tr>
+         </thead>
+         <tbody>
+                 {% for movement in movements %}
+                <tr>
+                 <td>{{movement[0]}}</td>
+                 <td>{{movement[1]}}</td>
+                 <td>{{movement[2]}}</td>
+                 <td>{{movement[3]}}</td>
+                 <td>{{movement[4]}}</td>
+                 <td>{{movement[5]}}</td>
+                 <td><a href="edit_product_movement/{{movement[0]}}" class="btn btn-primary pull-right">Edit</a></td>
+                 <td>
+                     <form action="{{url_for('delete_product_movements', id=movement[0])}}" method="POST">
+                        <input type="hidden" name="method" value="DELETE">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                     </form>
+                 </td>
+                </tr>
+                {% endfor %}
+         </tbody>
+     </table>
+     </div>
+{% endblock %}
