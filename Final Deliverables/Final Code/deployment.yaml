@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+    name: inventory
+    labels:
+        app: inventory
+
+spec:
+    selector:
+        matchLabels:
+            app: inventory
+    replicas: 1
+
+    template:
+        metadata:
+            labels:
+                app: inventory
+
+        spec:
+            containers:
+                - name: inventory
+
+                  image: icr.io/inventory_mgmt/inventory
+
+                  imagePullPolicy: Always
+
+                  ports:
+                      - containerPort: 5000
+                  env:
+                      - name: DISABLE_WEB_APP
+                        value: "false"
